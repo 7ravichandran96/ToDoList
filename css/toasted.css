@@ -1,0 +1,69 @@
+.toast {
+    position: fixed;
+    top: 2px;
+    left: 50%;
+    width: 80vw;
+    text-align: center;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;  /* White text for contrast */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-transform: capitalize;
+    z-index: 1000;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .toast.success {
+    background-color: #28a745;  /* Green */
+    
+    color: #ffffff;
+  }
+  
+  .toast.error {
+    background-color: #dc3545;  /* Red */
+    color: #ffffff;
+  }
+  
+  .toast.warning {
+    background-color: #fd7e14;  /* Orange */
+    color: #ffffff;
+  }
+  
+  .toast.info {
+    background-color: #17a2b8;  /* Blue */
+    color: #ffffff;
+  }
+  
+  /* Optional: Add slight fading effect for each toast */
+  .toast.success,
+  .toast.error,
+  .toast.warning,
+  .toast.info {
+    animation: fadeInOut 4s ease-in-out;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  

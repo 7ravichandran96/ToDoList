@@ -1,0 +1,276 @@
+
+body {
+  display: flex;
+  flex-direction: column; /* Default column layout */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: rgba(223, 191, 164, 0.726);
+  /* background: url("../images/bc.webp") no-repeat center center/cover; */
+  background-position: right;
+}
+
+/* Side navigation styles */
+.side-nav {
+  padding: 50px;
+  border-bottom: 1px solid #ddd; /* Border at the bottom for mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(223, 191, 164, 0.726);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.side-nav h2 {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-size: 22px;
+}
+
+.side-nav form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  align-items: center;
+}
+
+.side-nav input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.side-nav input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.button-group{
+  display: flex;
+  width: 100%;
+}
+
+.side-nav input[type="submit"]:hover {
+  background-color: #45a049;
+}
+/* Content section */
+.content {
+  width: 100%; /* Initially takes full width on mobile */
+  padding: 20px;
+  overflow-y: auto;
+  height: auto; /* Content adjusts based on screen size */
+}
+
+/* Task list section */
+.content h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #000000;
+  font-size: 24px;
+}
+
+.task {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #eee;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+.task div:first-child {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.task-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 40%;
+  gap: 10px;
+}
+
+.task-buttons button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+}
+
+.task-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Priority and completed task styles */
+.high-priority {
+  background-color: red;
+  color: white;
+}
+
+.medium-priority {
+  background-color: orange;
+  color: white;
+}
+
+.low-priority {
+  background-color: blue;
+  color: white;
+}
+
+.completed {
+  background-color: green;
+  color: white;
+}
+
+/* Export button styles */
+.export-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background-color: #45a049;
+}
+
+/* Container for the images */
+.image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden; /* Hide images that go out of bounds */
+  position: relative;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* This is where the images will be displayed and animated */
+.image-slide {
+  display: flex;
+  position: absolute;
+  left: 100%;
+  animation: slideLeft 15s linear infinite; /* Animation for sliding */
+}
+
+/* Responsive styles for mobile and tablet */
+@media screen and (max-width: 768px) {
+  /* Mobile and tablet portrait mode */
+  body {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .side-nav {
+    width: 100%; /* Side navigation takes full width */
+    border-bottom: none;
+    padding: 15px;
+  }
+
+  .side-nav h2 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 20px;
+  }
+
+  .content {
+    width: 100%; /* Content takes full width */
+    padding: 10px;
+  }
+
+  .task {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .task div:first-child {
+    width: 100%;
+  }
+
+  .task-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .image-container {
+    height: 200px; /* Reduce the height of image container */
+  }
+
+  .image-slide img {
+    width: 180px; /* Reduce image size */
+  }
+}
+
+/* Responsive styles for small mobile screens */
+@media screen and (max-width: 480px) {
+  .side-nav h2 {
+    font-size: 18px;
+  }
+
+  .task-buttons button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .export-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .image-container {
+    height: 150px; /* Further reduce image container height */
+  }
+
+  .image-slide img {
+    width: 150px; /* Further reduce image size */
+  }
+}
+
+/* Landscape Mode for large devices */
+@media screen and (orientation: landscape) {
+  /* Landscape orientation adjustments */
+  body {
+    flex-direction: row; /* Side-by-side layout */
+  }
+
+  .side-nav {
+    width: 25%; /* Side navigation takes 25% of the width */
+  }
+
+  .content {
+    width: 75%; /* Content takes 75% of the width */
+    padding: 30px;
+  }
+
+  .image-container {
+    height: 300px; /* Keep the original height of the image container */
+  }
+
+  .image-slide img {
+    width: 300px; /* Keep the original image width */
+  }
+}

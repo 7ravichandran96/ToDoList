@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Task / Reminder Alert</title>
+    <link rel="icon " href="./sale.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/toasted.css">
+</head>
+<body>
+  
+  <div class="side-nav">
+    <h2>Add/Edit Task</h2>
+    <form id="task-form">
+      <input type="text" id="task-title" placeholder="Task Title" required>
+      <input type="datetime-local" id="task-reminder" required>
+      <input type="hidden" id="editing-index" value="">
+      <div class="button-group">
+        <input type="submit" value="Save Task">
+        <input type="submit" value="Export Task" export-button" onclick="exportTasks()">
+      </div>
+    </form>
+    <div id="toast-container" style="position: fixed; ">
+      <!-- Toast notifications will be appended here -->
+  </div>
+  
+  </div>
+  
+  <div class="content">
+    <h2>Tasks to Reminder</h2>
+    <ul id="task-list"></ul>
+ 
+  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    
+   <script src="./js/main.js"></script>
+   <script src="./js/toasted.js"></script>
+</body>
+</html>
